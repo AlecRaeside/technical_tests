@@ -1,0 +1,2 @@
+-Base HTML is from HTML5 boilerplate (stripped down to what is necessary)
+-Build system is grunt. after creating package.json I installed grunt and grunt modules via CLI using "npm install *** --save-dev"
