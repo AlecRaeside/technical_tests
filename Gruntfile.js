@@ -7,6 +7,10 @@ module.exports = function(grunt) {
 					cssDir: "dev/css"
 				}
 			}
+		},
+		watch: {
+			files:["dev/scss/*.scss"],
+			tasks: ["compass:dev"]
 		}
 	});
 
