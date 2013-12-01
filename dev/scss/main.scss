@@ -1,10 +1,10 @@
 @import "compass";
 @import "normalize";
 @import "mixins";
+@import "compass-flexbox";
 
 * {
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
+	@include box-sizing(border-box);
 }
 
 .main {
@@ -24,7 +24,7 @@ header {
 		}
 	}
 	h2 {
-		font-family: Lato;
+		font-family: Lato, sans-serif;
 		color: #000;
 		font-weight: normal;
 		font-size: 36px;
@@ -35,12 +35,12 @@ header {
 	}
 }
 .deals-nav {
-	display:flex;
-	flex-wrap:wrap-reverse;
+    @include display-flex();
+	@include flex-wrap(wrap-reverse);
 	> div {
-		flex: 1 1 auto;
+		@include flex(1 1 auto);
 		&.search {
-			flex:1 1 auto;
+			@include flex(1 1 auto);
 			padding:0 5px;
 		}
 	}
@@ -49,16 +49,15 @@ header {
 
 .tabs {
 	overflow:hidden;
-	display:inline-block;
-	flex:1 1 100%;
+	@include flex(1 1 100%);
 	margin:0 4px;
-	display: inline-flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	@include display-inline-flex;
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
 	width:100%;
 	@media (min-width:650px) {
 		width:auto;
-		flex: 1 1 auto;
+		@include flex(1 1 auto);
 	}
 }
 .tab {
@@ -73,9 +72,9 @@ header {
 	margin: 2px 2px;
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 	cursor:pointer;
-	flex:1 1 23%;
+	@include flex(1 1 23%);
 	@media (min-width:650px) {
-		flex:1 1 auto;
+		@include flex(1 1 auto);
 		margin: 2px 8px 0 0;
 		border-radius: 4px 4px 0 0; 
 		border-bottom: none;
@@ -104,13 +103,16 @@ header {
 	color:#fff;
 	margin-bottom:2px;
 	cursor:pointer;
-	.store-deals {
-	height:0;
-}
-	&.selected {
+	~ .store-deals {
+		max-height:0;
+		overflow:hidden;
+		@include transition(max-height 1.3s);
+	}
+	.selected & {
 		background:#DA291C;
-		.store-deals {
-			height:auto;
+		
+		 &:not(.loading) ~ .store-deals {
+			max-height:9999px;
 		}
 	}
 }
@@ -119,10 +121,12 @@ header {
 .deal {
 	clear:both;
 	overflow:auto;
-	&:nth-child(2n) {
-		.deal-details {
-			background: #F5F5F5;
-			
+	@media (min-width:450px) {
+		&:nth-child(2n) {
+			.deal-details {
+				background: #F5F5F5;
+				
+			}
 		}
 	}
 	.deal-details {
@@ -141,7 +145,7 @@ header {
 	
 	.deal-title {
 		font-size:20px;
-		padding-top:10px;
+		padding-top:2px;
 		@media (min-width:450px) {
 			padding-top:18px;
 		}
@@ -209,13 +213,13 @@ header {
 		@extend .small-rectangle;
 		content: " ";
 		position: absolute;
-		-webkit-transform-origin:50% 50%;
-		-webkit-transform: rotate(90deg);
-		-webkit-transition: -webkit-transform 0.5s;
+		@include transform-origin(50% 50%);
+		@include transform(rotate(90deg));
+		@include transition(transform 0.5s);
 	}
 	.selected & {
 		&:after {
-			-webkit-transform: rotate(0deg);
+			@include transform(rotate(0deg));
 		}
 	}
 

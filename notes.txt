@@ -5,3 +5,7 @@
 -The CSS is setup with compass and normalize. I considered using a framework but decided against it considering it's a small page and it will show my style better without a framework.
 -to optimize for retina devices, css was used to make the plus/minus icons, and the view more arrow is a unicode symbol. This allows for resolution independant icons without the overhead of extra http requests with images. 
 -HTML5 geolocation is used to find the user's nearest store. Once the user has selected a state the closest store will be expanded.
+-Big decision was to use flex-box for layout of tabs a search box. while not implemented in all browsers, its support is growing and provides a very powerful layout model which was useful for making the page responsive and changing the order of elements (ie making the search box go on top of the tabs when on mobile despite being last in the html). Once thing i didn't have time for was implementing a flexbox polyfil for older browsers.
+-for the store deals container, I use max-height instead of height so it can be transitioned. 
+-A big inefficiency of this page is that the url for the image for each deal has to be retrieved by individual API requests, as I could not see the retailer logo ref in the deals API call.
+- I did not implement a placeholder polyfil for IE9

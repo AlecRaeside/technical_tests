@@ -15,8 +15,6 @@ app.directive("storedeals", function() {
 				$scope.store.selected = !$scope.store.selected;
 				if ($scope.store.selected) {
 					$scope.showStoreDeals();
-				} else {
-				
 				}
 			}
 

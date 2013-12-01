@@ -419,10 +419,11 @@ table {
   border: 1px #cccccc solid;
 }
 
-/* line 5, ../scss/main.scss */
+/* line 6, ../scss/main.scss */
 * {
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* line 10, ../scss/main.scss */
@@ -447,7 +448,7 @@ header h1 img {
 }
 /* line 26, ../scss/main.scss */
 header h2 {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   color: #000;
   font-weight: normal;
   font-size: 36px;
@@ -462,15 +463,25 @@ header h2 {
 
 /* line 37, ../scss/main.scss */
 .deals-nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
 /* line 40, ../scss/main.scss */
 .deals-nav > div {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 /* line 42, ../scss/main.scss */
 .deals-nav > div.search {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 0 5px;
 }
@@ -478,11 +489,24 @@ header h2 {
 /* line 50, ../scss/main.scss */
 .tabs {
   overflow: hidden;
-  display: inline-block;
+  -ms-flex: 1 1 100%;
+  -webkit-flex: 1 1 100%;
   flex: 1 1 100%;
   margin: 0 4px;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
   display: inline-flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   width: 100%;
 }
@@ -490,11 +514,13 @@ header h2 {
   /* line 50, ../scss/main.scss */
   .tabs {
     width: auto;
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
   }
 }
 
-/* line 64, ../scss/main.scss */
+/* line 63, ../scss/main.scss */
 .tab {
   padding: 10px 15px;
   display: inline-block;
@@ -508,11 +534,15 @@ header h2 {
   margin: 2px 2px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  -ms-flex: 1 1 23%;
+  -webkit-flex: 1 1 23%;
   flex: 1 1 23%;
 }
 @media (min-width: 650px) {
-  /* line 64, ../scss/main.scss */
+  /* line 63, ../scss/main.scss */
   .tab {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
     margin: 2px 8px 0 0;
     border-radius: 4px 4px 0 0;
@@ -520,12 +550,12 @@ header h2 {
   }
 }
 
-/* line 85, ../scss/main.scss */
+/* line 84, ../scss/main.scss */
 .search {
   display: inline-block;
   vertical-align: top;
 }
-/* line 88, ../scss/main.scss */
+/* line 87, ../scss/main.scss */
 .search input {
   border-radius: 4px;
   display: block;
@@ -534,7 +564,7 @@ header h2 {
   margin-top: 2px;
 }
 
-/* line 98, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 .store {
   background: #242424;
   padding: 15px;
@@ -545,29 +575,36 @@ header h2 {
   margin-bottom: 2px;
   cursor: pointer;
 }
-/* line 107, ../scss/main.scss */
-.store .store-deals {
-  height: 0;
+/* line 106, ../scss/main.scss */
+.store ~ .store-deals {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1.3s;
+  -moz-transition: max-height 1.3s;
+  -o-transition: max-height 1.3s;
+  transition: max-height 1.3s;
 }
-/* line 110, ../scss/main.scss */
-.store.selected {
+/* line 111, ../scss/main.scss */
+.selected .store {
   background: #DA291C;
 }
-/* line 112, ../scss/main.scss */
-.store.selected .store-deals {
-  height: auto;
+/* line 114, ../scss/main.scss */
+.selected .store:not(.loading) ~ .store-deals {
+  max-height: 9999px;
 }
 
-/* line 119, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 .deal {
   clear: both;
   overflow: auto;
 }
-/* line 123, ../scss/main.scss */
-.deal:nth-child(2n) .deal-details {
-  background: #F5F5F5;
+@media (min-width: 450px) {
+  /* line 126, ../scss/main.scss */
+  .deal:nth-child(2n) .deal-details {
+    background: #F5F5F5;
+  }
 }
-/* line 128, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .deal .deal-details {
   padding-left: 10px;
   padding-bottom: 20px;
@@ -576,25 +613,25 @@ header h2 {
   position: relative;
 }
 @media (min-width: 450px) {
-  /* line 128, ../scss/main.scss */
+  /* line 132, ../scss/main.scss */
   .deal .deal-details {
     margin-left: 120px;
     border-bottom: none;
     padding-bottom: 0;
   }
 }
-/* line 142, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 .deal .deal-title {
   font-size: 20px;
-  padding-top: 10px;
+  padding-top: 2px;
 }
 @media (min-width: 450px) {
-  /* line 142, ../scss/main.scss */
+  /* line 146, ../scss/main.scss */
   .deal .deal-title {
     padding-top: 18px;
   }
 }
-/* line 150, ../scss/main.scss */
+/* line 154, ../scss/main.scss */
 .deal .view-more {
   float: right;
   font-size: 13px;
@@ -606,12 +643,12 @@ header h2 {
   right: 0;
 }
 @media (min-width: 450px) {
-  /* line 150, ../scss/main.scss */
+  /* line 154, ../scss/main.scss */
   .deal .view-more {
     position: relative;
   }
 }
-/* line 164, ../scss/main.scss */
+/* line 168, ../scss/main.scss */
 .deal .view-more:after {
   content: "▶";
   font-size: 11px;
@@ -620,33 +657,33 @@ header h2 {
   margin-left: 5px;
   margin-right: 15px;
 }
-/* line 173, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 .deal .deal-info {
   color: #777;
   font-size: 14px;
   margin-top: 10px;
   padding-bottom: 10px;
 }
-/* line 179, ../scss/main.scss */
+/* line 183, ../scss/main.scss */
 .deal .retailer-logo {
   background: #fff;
   margin: 0 auto;
   display: block;
 }
 @media (min-width: 450px) {
-  /* line 179, ../scss/main.scss */
+  /* line 183, ../scss/main.scss */
   .deal .retailer-logo {
     float: left;
     display: inline-block;
     margin-right: 30px;
   }
 }
-/* line 188, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 .deal .retailer-logo.empty {
   opacity: 0;
 }
 
-/* line 195, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .small-rectangle, .plus-minus, .plus-minus:after {
   background: #fff;
   width: 14px;
@@ -654,22 +691,37 @@ header h2 {
   display: inline-block;
 }
 
-/* line 201, ../scss/main.scss */
+/* line 205, ../scss/main.scss */
 .plus-minus {
   vertical-align: middle;
   margin-bottom: 3px;
   position: relative;
   margin-right: 8px;
 }
-/* line 208, ../scss/main.scss */
+/* line 212, ../scss/main.scss */
 .plus-minus:after {
   content: " ";
   position: absolute;
-  -webkit-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50% 50%;
+  -moz-transform-origin: 50% 50% 50%;
+  -ms-transform-origin: 50% 50% 50%;
+  -o-transform-origin: 50% 50% 50%;
+  transform-origin: 50% 50% 50%;
   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
   -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform 0.5s;
 }
-/* line 217, ../scss/main.scss */
+/* line 221, ../scss/main.scss */
 .selected .plus-minus:after {
   -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
