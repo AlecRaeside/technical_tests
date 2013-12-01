@@ -2,3 +2,6 @@
 -Build system is grunt. after creating package.json I installed grunt and grunt modules via CLI using "npm install *** --save-dev"
 -Logo provided had a red background so I swithed it to a white background
 -the main westfield logo is first loaded as an svg so it is scalable and looks crisp on high DPI devices. if this fails (ie the device doesn't support svg it will load the normal jpg logo)
+-The CSS is setup with compass and normalize. I considered using a framework but decided against it considering it's a small page and it will show my style better without a framework.
+-to optimize for retina devices, css was used to make the plus/minus icons, and the view more arrow is a unicode symbol. This allows for resolution independant icons without the overhead of extra http requests with images. 
+-HTML5 geolocation is used to find the user's nearest store. Once the user has selected a state the closest store will be expanded.

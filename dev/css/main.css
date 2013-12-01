@@ -431,61 +431,101 @@ table {
   margin: 0 auto;
 }
 
+/* line 16, ../scss/main.scss */
+header h1 {
+  margin: 5px 0;
+}
 /* line 17, ../scss/main.scss */
 header h1 img {
   width: 130px;
 }
-/* line 21, ../scss/main.scss */
+@media (min-height: 500px) {
+  /* line 16, ../scss/main.scss */
+  header h1 {
+    margin: 15px 0;
+  }
+}
+/* line 26, ../scss/main.scss */
 header h2 {
   font-family: Lato;
   color: #000;
   font-weight: normal;
   font-size: 36px;
-  margin-left: 2px;
+  margin: 2px 0;
+}
+@media (min-height: 500px) {
+  /* line 26, ../scss/main.scss */
+  header h2 {
+    margin: 15px 0;
+  }
 }
 
-/* line 29, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 .deals-nav {
   display: flex;
+  flex-wrap: wrap-reverse;
 }
-/* line 31, ../scss/main.scss */
+/* line 40, ../scss/main.scss */
 .deals-nav > div {
-  flex: 0 1 auto;
-}
-/* line 33, ../scss/main.scss */
-.deals-nav > div.search {
   flex: 1 1 auto;
 }
+/* line 42, ../scss/main.scss */
+.deals-nav > div.search {
+  flex: 1 1 auto;
+  padding: 0 5px;
+}
 
-/* line 40, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 .tabs {
   overflow: hidden;
   display: inline-block;
-  margin-right: 10px;
+  flex: 1 1 100%;
+  margin: 0 4px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (min-width: 650px) {
+  /* line 50, ../scss/main.scss */
+  .tabs {
+    width: auto;
+    flex: 1 1 auto;
+  }
 }
 
-/* line 45, ../scss/main.scss */
+/* line 64, ../scss/main.scss */
 .tab {
-  border-bottom: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   display: inline-block;
+  text-align: center;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
   background: -webkit-linear-gradient(#ffffff, #f5f5f5);
   background: -moz-linear-gradient(#ffffff, #f5f5f5);
   background: -o-linear-gradient(#ffffff, #f5f5f5);
   background: linear-gradient(#ffffff, #f5f5f5);
-  border-radius: 4px 4px 0 0;
-  margin: 2px 8px 0 0;
+  border-radius: 4px;
+  margin: 2px 2px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  flex: 1 1 23%;
+}
+@media (min-width: 650px) {
+  /* line 64, ../scss/main.scss */
+  .tab {
+    flex: 1 1 auto;
+    margin: 2px 8px 0 0;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+  }
 }
 
-/* line 58, ../scss/main.scss */
+/* line 85, ../scss/main.scss */
 .search {
   display: inline-block;
   vertical-align: top;
 }
-/* line 61, ../scss/main.scss */
+/* line 88, ../scss/main.scss */
 .search input {
   border-radius: 4px;
   display: block;
@@ -494,51 +534,142 @@ header h2 {
   margin-top: 2px;
 }
 
-/* line 71, ../scss/main.scss */
+/* line 98, ../scss/main.scss */
 .store {
   background: #242424;
   padding: 15px;
   font-family: Lato;
+  text-transform: uppercase;
   font-size: 20px;
   color: #fff;
-  margin: 2px 0;
+  margin-bottom: 2px;
   cursor: pointer;
 }
-/* line 79, ../scss/main.scss */
+/* line 107, ../scss/main.scss */
+.store .store-deals {
+  height: 0;
+}
+/* line 110, ../scss/main.scss */
 .store.selected {
   background: #DA291C;
 }
+/* line 112, ../scss/main.scss */
+.store.selected .store-deals {
+  height: auto;
+}
 
-/* line 84, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 .deal {
   clear: both;
   overflow: auto;
 }
-/* line 87, ../scss/main.scss */
-.deal .deal-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 20px;
-  margin-top: 18px;
+/* line 123, ../scss/main.scss */
+.deal:nth-child(2n) .deal-details {
+  background: #F5F5F5;
 }
-/* line 95, ../scss/main.scss */
+/* line 128, ../scss/main.scss */
+.deal .deal-details {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px #cccccc solid;
+  min-height: 88px;
+  position: relative;
+}
+@media (min-width: 450px) {
+  /* line 128, ../scss/main.scss */
+  .deal .deal-details {
+    margin-left: 120px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+/* line 142, ../scss/main.scss */
+.deal .deal-title {
+  font-size: 20px;
+  padding-top: 10px;
+}
+@media (min-width: 450px) {
+  /* line 142, ../scss/main.scss */
+  .deal .deal-title {
+    padding-top: 18px;
+  }
+}
+/* line 150, ../scss/main.scss */
+.deal .view-more {
+  float: right;
+  font-size: 13px;
+  text-decoration: none;
+  color: #256E9E;
+  margin-top: 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+@media (min-width: 450px) {
+  /* line 150, ../scss/main.scss */
+  .deal .view-more {
+    position: relative;
+  }
+}
+/* line 164, ../scss/main.scss */
+.deal .view-more:after {
+  content: "▶";
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+/* line 173, ../scss/main.scss */
 .deal .deal-info {
   color: #777;
   font-size: 14px;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
-/* line 100, ../scss/main.scss */
-.deal:nth-child(2n) {
-  background: #F5F5F5;
-}
-/* line 103, ../scss/main.scss */
+/* line 179, ../scss/main.scss */
 .deal .retailer-logo {
   background: #fff;
-  float: left;
-  margin-right: 20px;
+  margin: 0 auto;
+  display: block;
 }
-/* line 107, ../scss/main.scss */
+@media (min-width: 450px) {
+  /* line 179, ../scss/main.scss */
+  .deal .retailer-logo {
+    float: left;
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
+/* line 188, ../scss/main.scss */
 .deal .retailer-logo.empty {
   opacity: 0;
+}
+
+/* line 195, ../scss/main.scss */
+.small-rectangle, .plus-minus, .plus-minus:after {
+  background: #fff;
+  width: 14px;
+  height: 2px;
+  display: inline-block;
+}
+
+/* line 201, ../scss/main.scss */
+.plus-minus {
+  vertical-align: middle;
+  margin-bottom: 3px;
+  position: relative;
+  margin-right: 8px;
+}
+/* line 208, ../scss/main.scss */
+.plus-minus:after {
+  content: " ";
+  position: absolute;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-transform: rotate(90deg);
+  -webkit-transition: -webkit-transform 0.5s;
+}
+/* line 217, ../scss/main.scss */
+.selected .plus-minus:after {
+  -webkit-transform: rotate(0deg);
 }

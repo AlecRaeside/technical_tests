@@ -10,9 +10,18 @@ app.directive("storedeals", function() {
 			$scope.logoSize = {
 				width: 110,
 				height: 88
+			};
+			$scope.toggleStoreDeals = function() {
+				$scope.store.selected = !$scope.store.selected;
+				if ($scope.store.selected) {
+					$scope.showStoreDeals();
+				} else {
+				
+				}
 			}
 
 			$scope.showStoreDeals = function() {
+				$scope.loading = true;
 				api.getStoreDeals($scope.store.code)
 					.success(function(deals) {
 						angular.forEach(deals, function(deal) {
@@ -24,8 +33,14 @@ app.directive("storedeals", function() {
 							});
 						});
 						$scope.deals = deals;
+						$scope.loading = false;
 					});
+			}
+			$scope.$watch("store.selected", function(val) {
+				if (val) {
+					$scope.showStoreDeals();
 				}
+			});
 		}]
 	}
 });

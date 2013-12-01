@@ -1,14 +1,17 @@
 <div>
-	<div class="store" ng-click="showStoreDeals()">
+	<div ng-class="{store:true, selected: store.selected, loading:loading}" ng-click="toggleStoreDeals()">
+		<span class="plus-minus"></span>
 		{{store.short_name}}
 	</div>
 	<div class="store-deals">
 		<div ng-repeat="deal in deals" class="deal">
 			<img ng-src="{{deal.image}}" ng-class="{'retailer-logo':true, empty:!deal.image}" width="{{logoSize.width}}" height="{{logoSize.height}}"  />
-			<div class="deal-title">{{deal.title}}</div>
-			
-			<div class="deal-info">
-				Deal from {{deal.available_from | date:'d/M/yyyy'}} to {{deal.available_to | date:'d/M/yyyy'}} from {{deal.retailerName}}
+			<div class="deal-details">
+				<a href="#" class="view-more">View More</a>
+				<div class="deal-title">{{deal.title}}</div>
+				<div class="deal-info">
+					Deal from {{deal.available_from | date:'d/M/yyyy'}} to {{deal.available_to | date:'d/M/yyyy'}} from {{deal.retailerName}}
+				</div>
 			</div>
 		</div>
 	</div>
