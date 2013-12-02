@@ -419,49 +419,7 @@ table {
   border: 1px #cccccc solid;
 }
 
-/* line 6, ../scss/main.scss */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 10, ../scss/main.scss */
-.main {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* line 16, ../scss/main.scss */
-header h1 {
-  margin: 5px 0;
-}
-/* line 17, ../scss/main.scss */
-header h1 img {
-  width: 130px;
-}
-@media (min-height: 500px) {
-  /* line 16, ../scss/main.scss */
-  header h1 {
-    margin: 15px 0;
-  }
-}
-/* line 26, ../scss/main.scss */
-header h2 {
-  font-family: Lato, sans-serif;
-  color: #000;
-  font-weight: normal;
-  font-size: 36px;
-  margin: 2px 0;
-}
-@media (min-height: 500px) {
-  /* line 26, ../scss/main.scss */
-  header h2 {
-    margin: 15px 0;
-  }
-}
-
-/* line 37, ../scss/main.scss */
+/* line 1, ../scss/_navbar.scss */
 .deals-nav {
   display: -webkit-box;
   display: -moz-box;
@@ -472,13 +430,13 @@ header h2 {
   -webkit-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-/* line 40, ../scss/main.scss */
+/* line 4, ../scss/_navbar.scss */
 .deals-nav > div {
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-/* line 42, ../scss/main.scss */
+/* line 6, ../scss/_navbar.scss */
 .deals-nav > div.search {
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;
@@ -486,7 +444,7 @@ header h2 {
   padding: 0 5px;
 }
 
-/* line 50, ../scss/main.scss */
+/* line 14, ../scss/_navbar.scss */
 .tabs {
   overflow: hidden;
   -ms-flex: 1 1 100%;
@@ -511,7 +469,7 @@ header h2 {
   width: 100%;
 }
 @media (min-width: 650px) {
-  /* line 50, ../scss/main.scss */
+  /* line 14, ../scss/_navbar.scss */
   .tabs {
     width: auto;
     -ms-flex: 1 1 auto;
@@ -520,7 +478,7 @@ header h2 {
   }
 }
 
-/* line 63, ../scss/main.scss */
+/* line 27, ../scss/_navbar.scss */
 .tab {
   padding: 10px 15px;
   display: inline-block;
@@ -539,7 +497,7 @@ header h2 {
   flex: 1 1 23%;
 }
 @media (min-width: 650px) {
-  /* line 63, ../scss/main.scss */
+  /* line 27, ../scss/_navbar.scss */
   .tab {
     -ms-flex: 1 1 auto;
     -webkit-flex: 1 1 auto;
@@ -550,12 +508,12 @@ header h2 {
   }
 }
 
-/* line 84, ../scss/main.scss */
+/* line 48, ../scss/_navbar.scss */
 .search {
   display: inline-block;
   vertical-align: top;
 }
-/* line 87, ../scss/main.scss */
+/* line 51, ../scss/_navbar.scss */
 .search input {
   border-radius: 4px;
   display: block;
@@ -564,7 +522,7 @@ header h2 {
   margin-top: 2px;
 }
 
-/* line 97, ../scss/main.scss */
+/* line 1, ../scss/_stores.scss */
 .store {
   background: #242424;
   padding: 15px;
@@ -575,7 +533,7 @@ header h2 {
   margin-bottom: 2px;
   cursor: pointer;
 }
-/* line 106, ../scss/main.scss */
+/* line 10, ../scss/_stores.scss */
 .store .closest-store {
   font-size: 13px;
   float: right;
@@ -583,7 +541,7 @@ header h2 {
   margin-top: 3px;
   display: inline-block;
 }
-/* line 113, ../scss/main.scss */
+/* line 17, ../scss/_stores.scss */
 .store ~ .store-deals {
   max-height: 0;
   overflow: hidden;
@@ -592,106 +550,16 @@ header h2 {
   -o-transition: max-height 1.3s;
   transition: max-height 1.3s;
 }
-/* line 118, ../scss/main.scss */
+/* line 22, ../scss/_stores.scss */
 .selected .store {
   background: #DA291C;
 }
-/* line 121, ../scss/main.scss */
+/* line 25, ../scss/_stores.scss */
 .selected .store:not(.loading) ~ .store-deals {
-  max-height: 9999px;
+  max-height: 3000px;
 }
 
-/* line 128, ../scss/main.scss */
-.deal {
-  clear: both;
-  overflow: auto;
-}
-@media (min-width: 450px) {
-  /* line 133, ../scss/main.scss */
-  .deal:nth-child(2n) .deal-details {
-    background: #F5F5F5;
-  }
-}
-/* line 139, ../scss/main.scss */
-.deal .deal-details {
-  padding-left: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px #cccccc solid;
-  min-height: 88px;
-  position: relative;
-}
-@media (min-width: 450px) {
-  /* line 139, ../scss/main.scss */
-  .deal .deal-details {
-    margin-left: 120px;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-}
-/* line 153, ../scss/main.scss */
-.deal .deal-title {
-  font-size: 20px;
-  padding-top: 2px;
-}
-@media (min-width: 450px) {
-  /* line 153, ../scss/main.scss */
-  .deal .deal-title {
-    padding-top: 18px;
-  }
-}
-/* line 161, ../scss/main.scss */
-.deal .view-more {
-  float: right;
-  font-size: 13px;
-  text-decoration: none;
-  color: #256E9E;
-  margin-top: 25px;
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-}
-@media (min-width: 450px) {
-  /* line 161, ../scss/main.scss */
-  .deal .view-more {
-    position: relative;
-  }
-}
-/* line 175, ../scss/main.scss */
-.deal .view-more:after {
-  content: "▶";
-  font-size: 11px;
-  display: inline-block;
-  vertical-align: bottom;
-  margin-left: 5px;
-  margin-right: 15px;
-}
-/* line 184, ../scss/main.scss */
-.deal .deal-info {
-  color: #777;
-  font-size: 14px;
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-/* line 190, ../scss/main.scss */
-.deal .retailer-logo {
-  background: #fff;
-  margin: 0 auto;
-  display: block;
-}
-@media (min-width: 450px) {
-  /* line 190, ../scss/main.scss */
-  .deal .retailer-logo {
-    float: left;
-    display: inline-block;
-    margin-right: 30px;
-  }
-}
-/* line 199, ../scss/main.scss */
-.deal .retailer-logo.empty {
-  opacity: 0;
-}
-
-/* line 206, ../scss/main.scss */
+/* line 31, ../scss/_stores.scss */
 .small-rectangle, .plus-minus, .plus-minus:after {
   background: #fff;
   width: 14px;
@@ -699,14 +567,14 @@ header h2 {
   display: inline-block;
 }
 
-/* line 212, ../scss/main.scss */
+/* line 37, ../scss/_stores.scss */
 .plus-minus {
   vertical-align: middle;
   margin-bottom: 3px;
   position: relative;
   margin-right: 8px;
 }
-/* line 219, ../scss/main.scss */
+/* line 44, ../scss/_stores.scss */
 .plus-minus:after {
   content: " ";
   position: absolute;
@@ -725,7 +593,7 @@ header h2 {
   -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
 }
-/* line 228, ../scss/main.scss */
+/* line 53, ../scss/_stores.scss */
 .selected .plus-minus:after {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -734,15 +602,147 @@ header h2 {
   transform: rotate(0deg);
 }
 
-/* line 236, ../scss/main.scss */
+/* line 61, ../scss/_stores.scss */
 .no-deals {
   background: #f5f5f5;
   text-align: center;
   color: #999;
   padding: 30px;
 }
-/* line 241, ../scss/main.scss */
+/* line 66, ../scss/_stores.scss */
 .no-deals div {
   text-transform: uppercase;
   font-size: 20px;
+}
+
+/* line 1, ../scss/_deals.scss */
+.deal {
+  clear: both;
+  overflow: auto;
+}
+@media (min-width: 450px) {
+  /* line 6, ../scss/_deals.scss */
+  .deal:nth-child(2n) .deal-details {
+    background: #F5F5F5;
+  }
+}
+/* line 12, ../scss/_deals.scss */
+.deal .deal-details {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px #cccccc solid;
+  min-height: 88px;
+  position: relative;
+}
+@media (min-width: 450px) {
+  /* line 12, ../scss/_deals.scss */
+  .deal .deal-details {
+    margin-left: 120px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+/* line 26, ../scss/_deals.scss */
+.deal .deal-title {
+  font-size: 20px;
+  padding-top: 2px;
+}
+@media (min-width: 450px) {
+  /* line 26, ../scss/_deals.scss */
+  .deal .deal-title {
+    padding-top: 18px;
+  }
+}
+/* line 34, ../scss/_deals.scss */
+.deal .view-more {
+  float: right;
+  font-size: 13px;
+  text-decoration: none;
+  color: #256E9E;
+  margin-top: 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+@media (min-width: 450px) {
+  /* line 34, ../scss/_deals.scss */
+  .deal .view-more {
+    position: relative;
+  }
+}
+/* line 48, ../scss/_deals.scss */
+.deal .view-more:after {
+  content: "▶";
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+/* line 57, ../scss/_deals.scss */
+.deal .deal-info {
+  color: #777;
+  font-size: 14px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 63, ../scss/_deals.scss */
+.deal .retailer-logo {
+  background: #fff;
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 450px) {
+  /* line 63, ../scss/_deals.scss */
+  .deal .retailer-logo {
+    float: left;
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
+/* line 72, ../scss/_deals.scss */
+.deal .retailer-logo.empty {
+  opacity: 0;
+}
+
+/* line 9, ../scss/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../scss/main.scss */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* line 19, ../scss/main.scss */
+header h1 {
+  margin: 5px 0;
+}
+/* line 20, ../scss/main.scss */
+header h1 img {
+  width: 130px;
+}
+@media (min-height: 500px) {
+  /* line 19, ../scss/main.scss */
+  header h1 {
+    margin: 15px 0;
+  }
+}
+/* line 29, ../scss/main.scss */
+header h2 {
+  font-family: Lato, sans-serif;
+  color: #000;
+  font-weight: normal;
+  font-size: 36px;
+  margin: 2px 0;
+}
+@media (min-height: 500px) {
+  /* line 29, ../scss/main.scss */
+  header h2 {
+    margin: 15px 0;
+  }
 }
