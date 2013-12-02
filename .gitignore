@@ -13,6 +13,7 @@ test/version_tmp
 tmp
 node_modules/
 .sass-cache/
+.tmp/
 
 # YARD artifacts
 .yardoc
